@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9036394935256687161}
   - component: {fileID: 9036394935256687162}
+  - component: {fileID: -1846152186692057983}
   - component: {fileID: -3933702886535281764}
   - component: {fileID: -2163545934169410361}
   m_Layer: 6
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 9036394935256687163}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 7, y: 7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -86,6 +87,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-1846152186692057983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9036394935256687163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f222ecaf28879eb4f98b9896c4872453, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: 3
+  Evt_OnHit:
+    m_PersistentCalls:
+      m_Calls: []
+  IsShot: 0
+  Speed: 10
 --- !u!135 &-3933702886535281764
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -97,8 +116,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.078984894
-  m_Center: {x: 0, y: 0.0000000059604646, z: 0}
+  m_Radius: 0.08
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &-2163545934169410361
 Rigidbody:
   m_ObjectHideFlags: 0
