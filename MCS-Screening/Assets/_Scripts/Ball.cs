@@ -22,7 +22,7 @@ public class Ball : MonoBehaviour {
     public bool IsShot = false;
     public float Speed = 10;
 
-    private Rigidbody rigidbody;
+    [SerializeField]private Rigidbody rigidbody;
     private SphereCollider sphereCollider;
     private Vector3 collisionPosition;
 
@@ -50,7 +50,7 @@ public class Ball : MonoBehaviour {
     private void OnCollisionEnter(Collision other) {
         if (!other.gameObject.GetComponent<Ball>()) return;
 
-        if (IsShot) {
+        if (!rigidbody.isKinematic) {
             SetCollisionPosition(other.contacts[0].point);
             IsShot = false;
             rigidbody.isKinematic = true;

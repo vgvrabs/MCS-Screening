@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4799310078688331988}
   - component: {fileID: 4799310078688331989}
   - component: {fileID: 5472437887485658293}
+  - component: {fileID: -662729182599007573}
   - component: {fileID: -8489889781630490373}
   - component: {fileID: -5633049702708451311}
   m_Layer: 6
@@ -99,12 +100,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f222ecaf28879eb4f98b9896c4872453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Row: 0
+  Col: 0
   Color: 2
   Evt_OnHit:
     m_PersistentCalls:
       m_Calls: []
   IsShot: 0
   Speed: 10
+  rigidbody: {fileID: -435386993948962934, guid: a7020e5419095374bad93dbef2ab64b7, type: 3}
+--- !u!114 &-662729182599007573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4799310078688331986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0081dab1cb65d24d96888d2a1117466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
 --- !u!135 &-8489889781630490373
 SphereCollider:
   m_ObjectHideFlags: 0

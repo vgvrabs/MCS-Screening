@@ -127,12 +127,14 @@ public class HexGridManager : MonoBehaviour {
     }
 
     public void CheckForMatches(Ball collidedBall) {
+        //creates a dictionary to iterate and collate all balls of the same color
         Dictionary<Ball.BallColor, List <Ball>> colorGroups =
             new Dictionary<Ball.BallColor, List<Ball>>();
 
+        //iterates all balls attached to the board
         foreach (Ball ball in activeBalls) {
+            //checks if the ball is near the collided ball
             if (ball.IsConnectedTo(collidedBall)) {
-                print("Connected");
                 Ball.BallColor color = ball.Color;
                 
                 if (!colorGroups.ContainsKey(color)) {
@@ -152,37 +154,19 @@ public class HexGridManager : MonoBehaviour {
             }
         }
     }
-    public void CheckConnectedBalls() {
-        List<List<GameObject>> ballsList = FindConnectedBalls();
 
-        foreach (List<GameObject> connectedBalls in ballsList) {
-            foreach (GameObject connectedBall in connectedBalls) {
-                connectedBall.GetComponent<SpriteRenderer>().color = Color.red;
-            }
-        }
-    }
-    
-    private List<List<GameObject>> FindConnectedBalls() {
-
-        List<List<GameObject>> connectedBalls = new List<List<GameObject>>();
-        bool[,] checkedPosition = new bool[XGridSize, YGridSize];
-
+    private void DropBalls(){
         for (int x = 0; x < XGridSize; x++) {
             for (int y = 0; y < YGridSize; y++) {
-                
-                GameObject ball = hexGrid[x, y];
-                
-                if (!checkedPosition[x, y] && ball != null) {
-                    List<GameObject> connectedList = new List<GameObject>();
-                    FloodFill(ball, connectedList, checkedPosition);
-                    connectedBalls.Add(connectedList);
-                }
+                //Vector2 position = GetWorldPosition
             }
         }
-
-        return connectedBalls;
     }
 
+    private Vector2 GetWorldPosition(int x, int y) {
+        
+    }
+    
     private void FloodFill(GameObject ball, List<GameObject> connectedBalls, bool[,] checkedPosition) {
         int xPos = Mathf.RoundToInt(ball.transform.position.x / hexWidth);
         int yPos = Mathf.RoundToInt(ball.transform.position.y / (hexHeight * 0.75f));
