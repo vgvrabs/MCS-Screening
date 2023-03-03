@@ -55,7 +55,7 @@ public class Ball : MonoBehaviour {
             IsShot = false;
             rigidbody.isKinematic = true;
             Evt_OnHit?.Invoke(gameObject, other);
-            Evt_OnHit?.RemoveAllListeners();
+            Evt_OnHit.RemoveAllListeners();
             gameObject.SetActive(false);
             Destroy(gameObject, 1f);
         }
@@ -70,6 +70,11 @@ public class Ball : MonoBehaviour {
 
     public bool IsConnectedTo(Ball otherBall) {
         float distance = Vector3.Distance(transform.position, otherBall.transform.position);
-        return distance <= 1.2f;
+        return distance <= 1.3f;
+    }
+
+    public void SetBallPosition(int x, int y) {
+        Row = x;
+        Col = y;
     }
 }

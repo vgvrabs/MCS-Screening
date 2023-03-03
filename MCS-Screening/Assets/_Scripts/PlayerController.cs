@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour {
     public GameObject NextBall;
 
     private HexGridManager hexGridManager;
+    private BallManager ballManager;
     
     [SerializeField] private bool canShoot;
 
@@ -36,8 +37,9 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    public void Initialize() {
+    private void Initialize() {
         hexGridManager = SingletonManager.Get<HexGridManager>();
+        ballManager = SingletonManager.Get<BallManager>();
         GenerateInitialBall();
         GenerateBall();
         canShoot = true;
@@ -60,14 +62,13 @@ public class PlayerController : MonoBehaviour {
 
     public void GenerateInitialBall() {
         print("generated Initial Ball");
-        int ballCount = hexGridManager.BallPool.Count;
+        int ballCount = ballManager.BallPool.Count;
         
-        
-        NextBall = hexGridManager.BallPool[Random.Range(0, ballCount)];
+        NextBall = ballManager.BallPool[Random.Range(0, ballCount)];
         NextBallSprite.sprite = NextBall.GetComponent<SpriteRenderer>().sprite;
     }
     public void GenerateBall() {
-        int ballCount = hexGridManager.BallPool.Count;
+        int ballCount = ballManager.BallPool.Count;
      
         if (ballCount <= 0) return;
 
@@ -76,7 +77,7 @@ public class PlayerController : MonoBehaviour {
         
         CurrentBall = NextBall;
         CurrentBallSprite.sprite = CurrentBall.GetComponent<SpriteRenderer>().sprite;
-        NextBall = hexGridManager.BallPool[Random.Range(0, ballCount)];
+        NextBall = ballManager.BallPool[Random.Range(0, ballCount)];
         NextBallSprite.sprite = NextBall.GetComponent<SpriteRenderer>().sprite;
     }
 
@@ -87,8 +88,6 @@ public class PlayerController : MonoBehaviour {
         Ball shotBall = spawnedBall.GetComponent<Ball>();
         shotBall.Initialize();
         WaitToShoot(1f);
-        //shotBall.Evt_OnHit.AddListener(hexGridManager.AttachBallToGrid);
-
     }
 
     public async void WaitToShoot(float duration) {
