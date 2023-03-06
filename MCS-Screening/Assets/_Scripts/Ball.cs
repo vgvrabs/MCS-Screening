@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
@@ -18,23 +19,28 @@ public class Ball : MonoBehaviour {
     public int Row;
     public int Col;
     public BallColor Color;
-    public UnityEvent<GameObject, Collision> Evt_OnHit = new();
+    public UnityEvent<Ball, Collision> Evt_OnHit = new();
     public bool IsShot = false;
     public float Speed = 10;
+    public float Radius;
+    public List<Ball> ConnectedBalls = new List<Ball>();
+
 
     [SerializeField]private Rigidbody rigidbody;
-    private SphereCollider sphereCollider;
+    [SerializeField]private Collider Collider;
     private Vector3 collisionPosition;
 
+  
 
     public void Initialize() {
         rigidbody = GetComponent<Rigidbody>();
-        sphereCollider = GetComponent<SphereCollider>();
+        Collider = GetComponent<Collider>();
+        
         Evt_OnHit.AddListener(SingletonManager.Get<HexGridManager>().SnapToGrid);
+
         rigidbody.isKinematic = false;
         IsShot = true;
         GetComponent<SpriteRenderer>().sortingOrder = 2;
-        //Evt_OnHit.AddListener(HexGridManager.AttachBallToGrid);
     }
 
     private void FixedUpdate() {
@@ -47,17 +53,43 @@ public class Ball : MonoBehaviour {
         rigidbody.velocity = (direction * Speed);
     }
 
+    public Ball GetNeighbor(Ball firstBall) {
+        List<Collider> Colliders = Physics.OverlapSphere(transform.position, Radius).ToList();
+
+        Colliders.Remove(Collider);
+
+        foreach (Collider collider in Colliders) {
+            Ball ball = collider.GetComponent<Ball>();
+
+            if (ball) {
+
+                if (ball.Color == Color) {
+                    
+                    if (!firstBall.ConnectedBalls.Contains(ball)) {
+                        
+                        firstBall.ConnectedBalls.Add(ball);
+                        ball.GetNeighbor(firstBall);
+                    }
+                }
+            }
+        }
+
+        return null;
+    }
+
     private void OnCollisionEnter(Collision other) {
         if (!other.gameObject.GetComponent<Ball>()) return;
-
+        
         if (!rigidbody.isKinematic) {
-            SetCollisionPosition(other.contacts[0].point);
             IsShot = false;
             rigidbody.isKinematic = true;
-            Evt_OnHit?.Invoke(gameObject, other);
-            Evt_OnHit.RemoveAllListeners();
-            gameObject.SetActive(false);
-            Destroy(gameObject, 1f);
+            
+            ConnectedBalls.Add(this);
+            GetNeighbor(this);
+            SingletonManager.Get<BallManager>().DestroyBalls(ConnectedBalls);
+            
+            Evt_OnHit?.Invoke(this, other);
+            //Evt_OnHit.RemoveAllListeners();
         }
     }
 
@@ -77,4 +109,13 @@ public class Ball : MonoBehaviour {
         Row = x;
         Col = y;
     }
+    
+#if UNITY_EDITOR
+
+    void OnDrawGizmosSelected() {
+
+        Gizmos.DrawWireSphere(transform.position, Radius);    
+    }
+    
+#endif
 }

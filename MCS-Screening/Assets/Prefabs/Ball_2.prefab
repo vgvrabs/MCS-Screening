@@ -108,7 +108,10 @@ MonoBehaviour:
       m_Calls: []
   IsShot: 0
   Speed: 10
-  rigidbody: {fileID: -435386993948962934, guid: a7020e5419095374bad93dbef2ab64b7, type: 3}
+  Radius: 1
+  ConnectedBalls: []
+  rigidbody: {fileID: 4173857736982943680}
+  Collider: {fileID: -4108922181661133715}
 --- !u!114 &3030110859948221297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0081dab1cb65d24d96888d2a1117466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  rb: {fileID: 4173857736982943680}
 --- !u!135 &-4108922181661133715
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -133,7 +136,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.07
+  m_Radius: 0.08
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4173857736982943680
 Rigidbody:

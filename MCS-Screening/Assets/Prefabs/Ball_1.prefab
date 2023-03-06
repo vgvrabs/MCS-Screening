@@ -108,7 +108,10 @@ MonoBehaviour:
       m_Calls: []
   IsShot: 0
   Speed: 10
+  Radius: 1
+  ConnectedBalls: []
   rigidbody: {fileID: -435386993948962934}
+  Collider: {fileID: -2639013521253378813}
 --- !u!114 &2396586049715202180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,7 +136,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.07
+  m_Radius: 0.08
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &-435386993948962934
 Rigidbody:
