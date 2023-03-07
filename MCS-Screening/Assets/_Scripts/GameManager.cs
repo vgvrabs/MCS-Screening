@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
+    public PlayerController Player;
     private BallManager ballManager;
     private HexGridManager hexGridManager;
     

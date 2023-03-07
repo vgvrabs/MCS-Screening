@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
     public float MinZRot = -90f;
     public float ShotDelay = 1f;
 
+    public Ball ShotBall;
     public GameObject FirePoint;
     public SpriteRenderer CurrentBallSprite;
     public GameObject CurrentBall;
@@ -72,8 +73,9 @@ public class PlayerController : MonoBehaviour {
      
         if (ballCount <= 0) return;
 
-
-        if (!NextBall) return;
+        /*if (!NextBall) {
+            return;
+        }*/
         
         CurrentBall = NextBall;
         CurrentBallSprite.sprite = CurrentBall.GetComponent<SpriteRenderer>().sprite;
@@ -85,8 +87,8 @@ public class PlayerController : MonoBehaviour {
         if (!ball) return;
 
         GameObject spawnedBall = Instantiate(ball, FirePoint.transform.position, FirePoint.transform.rotation);
-        Ball shotBall = spawnedBall.GetComponent<Ball>();
-        shotBall.Initialize();
+        ShotBall = spawnedBall.GetComponent<Ball>();
+        ShotBall.Initialize();
         WaitToShoot(1f);
     }
 

@@ -107,11 +107,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   IsShot: 0
-  Speed: 10
+  Speed: 20
   Radius: 1
   ConnectedBalls: []
-  rigidbody: {fileID: -435386993948962934}
+  TopBall: {fileID: 0}
   Collider: {fileID: -2639013521253378813}
+  rigidbody: {fileID: -435386993948962934}
 --- !u!114 &2396586049715202180
 MonoBehaviour:
   m_ObjectHideFlags: 0

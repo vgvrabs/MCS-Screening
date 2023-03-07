@@ -17,10 +17,10 @@ public class HexGridManager : MonoBehaviour {
     public int BallSpawnChance;
     public float gap = 0.1f;
     public List<Ball> ConnectedBalls;
+    public GameObject[,] HexGrid;
 
     private float hexWidth;
     private float hexHeight;
-    private GameObject[,] hexGrid;
     private BallManager ballManager;
     private GameManager gameManager;
 
@@ -41,7 +41,7 @@ public class HexGridManager : MonoBehaviour {
         //InitializeGrid();
         ballManager = SingletonManager.Get<BallManager>();
         gameManager = SingletonManager.Get<GameManager>();
-        hexGrid = new GameObject[XGridSize, YGridSize];
+        HexGrid = new GameObject[XGridSize, YGridSize];
         GenerateGrid();
         //BallPool = new List<GameObject>(BallPrefab);
     }
@@ -66,10 +66,13 @@ public class HexGridManager : MonoBehaviour {
                         Quaternion.identity);
                     ball.transform.localScale = Vector3.one * HexSize;
                     Ball spawnedBall = ball.GetComponent<Ball>();
+                    
 
                     ballManager.AddBall(spawnedBall);
                     spawnedBall.SetBallPosition(x, y);
-                    hexGrid[x, y] = ball;
+                    HexGrid[x, y] = ball;
+                    if (y >= 1 && IsBallAt(x, y - 1)) 
+                        spawnedBall.TopBall = (GetBallAt(x, y - 1));
                 }
             }
         }
@@ -78,14 +81,14 @@ public class HexGridManager : MonoBehaviour {
 
     public Ball GetBallAt(int x, int y) {
         if (x >= 0 && x < XGridSize && y >= 0 && y < YGridSize) {
-            return hexGrid[x, y].GetComponent<Ball>();
+            return HexGrid[x, y].GetComponent<Ball>();
         }
         return null;
     }
 
     public bool IsBallAt(int x, int y) {
         if ((x >= 0 && x <= XGridSize && y >= 0 && y <= YGridSize)) {
-            if(hexGrid[x,y] != null) return true;
+            if(HexGrid[x,y] != null) return true;
         }
 
         return false;
@@ -159,10 +162,13 @@ public class HexGridManager : MonoBehaviour {
         int col = Mathf.Abs(Mathf.RoundToInt(collisionPos.y / yOffset));
         
         ball.SetBallPosition(row ,col);
+
+        HexGrid[row, col] = ball.gameObject;
+        if (col >= 1) {
+            if (IsBallAt(row, col - 1))
+                ball.TopBall = (GetBallAt(row, col - 1));
+        }
         
-        print("snap to grid");
-        
-        hexGrid[row, col] = ball.gameObject;
         
         gameManager.CheckForLoseCondition(ball);
     }

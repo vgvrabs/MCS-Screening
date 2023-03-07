@@ -24,10 +24,12 @@ public class Ball : MonoBehaviour {
     public float Speed = 10;
     public float Radius;
     public List<Ball> ConnectedBalls = new List<Ball>();
+    public Ball TopBall;
+    public Collider Collider;
 
 
     [SerializeField]private Rigidbody rigidbody;
-    [SerializeField]private Collider Collider;
+    
     private Vector3 collisionPosition;
 
   
@@ -54,17 +56,14 @@ public class Ball : MonoBehaviour {
     }
 
     public Ball GetNeighbor(Ball firstBall) {
-        List<Collider> Colliders = Physics.OverlapSphere(transform.position, Radius).ToList();
+        List<Collider> colliders = Physics.OverlapSphere(transform.position, Radius).ToList();
+        colliders.Remove(Collider);
 
-        Colliders.Remove(Collider);
-
-        foreach (Collider collider in Colliders) {
-            Ball ball = collider.GetComponent<Ball>();
+        foreach (Collider col in colliders) {
+            Ball ball = col.GetComponent<Ball>();
 
             if (ball) {
-
                 if (ball.Color == Color) {
-                    
                     if (!firstBall.ConnectedBalls.Contains(ball)) {
                         
                         firstBall.ConnectedBalls.Add(ball);
@@ -76,19 +75,21 @@ public class Ball : MonoBehaviour {
 
         return null;
     }
-
+    
     private void OnCollisionEnter(Collision other) {
         if (!other.gameObject.GetComponent<Ball>()) return;
         
         if (!rigidbody.isKinematic) {
+            BallManager ballManager = SingletonManager.Get<BallManager>();
             IsShot = false;
             rigidbody.isKinematic = true;
             
+            Evt_OnHit?.Invoke(this, other);
             ConnectedBalls.Add(this);
             GetNeighbor(this);
-            SingletonManager.Get<BallManager>().DestroyBalls(ConnectedBalls);
-            
-            Evt_OnHit?.Invoke(this, other);
+            ballManager.DestroyBalls(ConnectedBalls);
+            //ballManager.CheckDisconnectedBalls(ballManager.activeBalls[0]);
+            ballManager.StartCoroutine(ballManager.WaitAndCheck());
             //Evt_OnHit.RemoveAllListeners();
         }
     }
@@ -100,9 +101,12 @@ public class Ball : MonoBehaviour {
         return collisionPosition;
     }
 
-    public bool IsConnectedTo(Ball otherBall) {
-        float distance = Vector3.Distance(transform.position, otherBall.transform.position);
-        return distance <= 1.3f;
+    public bool IsConnectedTo() {
+        //float distance = Vector3.Distance(transform.position, otherBall.transform.position);
+        //return distance <= 1.3f;
+        if (TopBall != null) return true;
+
+        return false;
     }
 
     public void SetBallPosition(int x, int y) {
