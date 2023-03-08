@@ -106,10 +106,15 @@ MonoBehaviour:
   Evt_OnHit:
     m_PersistentCalls:
       m_Calls: []
+  Evt_OnDestroy:
+    m_PersistentCalls:
+      m_Calls: []
   IsShot: 0
+  IsDropping: 0
   Speed: 20
   Radius: 1
   ConnectedBalls: []
+  ConnectedBallsBelow: []
   TopBall: {fileID: 0}
   Collider: {fileID: 2022850951719982388}
   rigidbody: {fileID: -9194570988286586939}

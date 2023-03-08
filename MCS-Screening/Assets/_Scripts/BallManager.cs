@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class BallManager : MonoBehaviour {
     
@@ -38,11 +39,15 @@ public class BallManager : MonoBehaviour {
     }
 
     public void RemoveBall(Ball ball) {
-        activeBalls.Remove(ball);
-        Destroy(ball.gameObject);
+
+        if (activeBalls.Contains(ball)) {
+            activeBalls.Remove(ball);
+        }
+        
+        gameManager.CheckForWinCondition();
     }
 
-    public void DestroyBalls(List<Ball> connectedBalls) {
+    public void DestroyBalls(List<Ball> connectedBalls, int threshold) {
 
         if (connectedBalls.Count >= 3) {
             for (int i = connectedBalls.Count - 1; i >= 0; i--) {
@@ -54,33 +59,19 @@ public class BallManager : MonoBehaviour {
                 
                 Destroy(connectedBalls[i].gameObject);
             }
+            
+            StartCoroutine(WaitAndCheck());
         }
         
         gameManager.CheckForWinCondition();
-        //UpdateBallPool();
-        //CheckDisconnectedBalls();
-        //(activeBalls[0]);
-        //sRemoveDisconnectedBalls();
-        //CheckIsConnectedToTop();
     }
     
-    private void CheckIsConnectedToTop() {
-        foreach (Ball ball in activeBalls) {
-            if (ball.Col >= 1) {
-                if (!ball.IsConnectedTo()) {
-                    if (!activeBalls.Contains(ball) || ball == null) return;
-                    //activeBalls.Remove(ball);
-                    //Destroy(ball.gameObject);
-                    //DropDisconnectedBalls(ball);
-                    DropDisconnectedBalls(ball);
-                }
-            }
-        }
-    }
-
+    
     public void UpdateBallPool() {
-        BallPool.Clear();
-        Ball.BallColor[] ballColors = new[] {
+        //BallPool.Clear();
+
+        //BallPool = (gameObject) activeBalls;
+        /*Ball.BallColor[] ballColors = new[] {
             Ball.BallColor.Brown, Ball.BallColor.White,
             Ball.BallColor.Gold, Ball.BallColor.Red, Ball.BallColor.Blue
         };
@@ -94,37 +85,17 @@ public class BallManager : MonoBehaviour {
                     break;
                 }
             }
-        }
+        }*/
         /*foreach (Ball ball in activeBalls) {
             for (int i = 0; i < 4; i++) {
                 
             }
         }*/
     }
-
-    /*public Ball CheckDisconnectedBalls(Ball firstBall) {
-        List<Collider> colliders = Physics.OverlapSphere(firstBall.transform.position, firstBall.Radius).ToList();
-        colliders.Remove(firstBall.Collider);
-
-        foreach (Collider col in colliders) {
-            Ball ball = col.GetComponent<Ball>();
-
-            if (ball) {
-                if(ball.TopBall == null){
-                    if (!DisconnectedBalls.Contains(ball)) {
-                        DisconnectedBalls.Add(ball);
-                       //if (ball.Col < 1) DisconnectedBalls.Remove(ball);
-                        CheckDisconnectedBalls(ball);
-                    }
-                }
-            }
-        }
-        
-        return null;
-    }*/
-
+    
     public void CheckDisconnectedBalls() {
         List<Ball> disconnectedBalls = new List<Ball>();
+        List<Ball> tempBalls = new List<Ball>();
 
         foreach (Ball ball in activeBalls) {
             if (ball.Col <= 0) continue;
@@ -137,66 +108,40 @@ public class BallManager : MonoBehaviour {
         }
 
         foreach (Ball ball in disconnectedBalls) {
-            for (int y = 0; y < hexGridManager.YGridSize; y++) {
-                
-                if(ball == null) continue;
-                
-                if (hexGridManager.IsBallAt(ball.Row, y)) {
-                    print("Disconnected here");
-                    if (!disconnectedBalls.Contains(ball)) {
-                        disconnectedBalls.Add(hexGridManager.GetBallAt(ball.Row, y));
-                    }
-                }
-            }
+            ball.GetBallBelow(ball, tempBalls);
         }
-
+        
+        
+        disconnectedBalls.AddRange(tempBalls);
         DisconnectedBalls = disconnectedBalls;
+        
+        
+        
+        //DestroyBalls(DisconnectedBalls, 0);
         
         foreach (Ball ball in DisconnectedBalls) {
             if (DisconnectedBalls.Contains(ball)) {
                 if (ball == null) continue;
+
+                if (activeBalls.Contains(ball)) {
+                    activeBalls.Remove(ball);
+                }
                 
                 hexGridManager.HexGrid[ball.Row, ball.Col] = null;
-                Destroy(ball.gameObject);
+                ball.DropBall();
             }
         }
         
-        DisconnectedBalls.Clear();
+        
+        gameManager.CheckForWinCondition();
+        UpdateBallPool();
+        //DisconnectedBalls.Clear();
     }
-
-    public void RemoveDisconnectedBalls() {
-        if (DisconnectedBalls.Count <= 0) return;
-
-        foreach (Ball ball in DisconnectedBalls) {
-            if (ball) {
-                if (ball.Col <= 0) return;
-
-                Destroy(ball.gameObject);
-            }
-        }
-    }
-
+    
     public IEnumerator WaitAndCheck() {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         
-        //CheckDisconnectedBalls(firstBall);
         CheckDisconnectedBalls();
     }
-
-    private void DropDisconnectedBalls(Ball ball) {
-        int columnSize = hexGridManager.YGridSize;
-        //List<Ball> disconnectedBalls = new List<Ball>();
-
-        for (int y = ball.Col; y < columnSize; y++) {
-            if (hexGridManager.IsBallAt(ball.Row, y)) {
-                DisconnectedBalls.Add(hexGridManager.GetBallAt(ball.Row, y));
-                //disconnectedBalls.Add(ball);
-            }
-        }
-
-        /*for (int i = disconnectedBalls.Count - 1; i >= 0; i--) {
-            activeBalls.Remove(disconnectedBalls[i]);
-            Destroy(disconnectedBalls[i].gameObject);
-        }*/
-    }
+    
 }

@@ -175,6 +175,7 @@ MonoBehaviour:
   - {fileID: 1209078279352423557, guid: e0286c027d2705c4c98638c248336a33, type: 3}
   BallPool: []
   activeBalls: []
+  DisconnectedBalls: []
 --- !u!1 &195654236
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,6 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23224e58874a38840a0283797e4f6bb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 1016914660}
 --- !u!1 &663295914
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,6 +700,7 @@ MonoBehaviour:
   MaxZRot: 90
   MinZRot: -90
   ShotDelay: 1
+  ShotBall: {fileID: 0}
   FirePoint: {fileID: 1863149888}
   CurrentBallSprite: {fileID: 1863149890}
   CurrentBall: {fileID: 0}

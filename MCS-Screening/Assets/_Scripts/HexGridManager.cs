@@ -58,7 +58,7 @@ public class HexGridManager : MonoBehaviour {
                 }
 
                 float yPos = y * yOffset;
-
+                
                 if (y <= YGridSize / 2) {
                     List<GameObject> ballPrefab = ballManager.BallPrefab;
                     int randomBallIndex = Random.Range(0, ballPrefab.Count);
@@ -165,8 +165,16 @@ public class HexGridManager : MonoBehaviour {
 
         HexGrid[row, col] = ball.gameObject;
         if (col >= 1) {
-            if (IsBallAt(row, col - 1))
-                ball.TopBall = (GetBallAt(row, col - 1));
+            ball.TopBall = ballCol.gameObject.GetComponent<Ball>();
+            /*if (IsBallAt(row, col - 1))
+                ball.TopBall = GetBallAt(row, col - 1);
+            
+            else if (IsBallAt(row + 1, col - 1)) {
+                ball.TopBall = GetBallAt(row + 1, col - 1);
+            }
+            
+            else if (IsBallAt(row - 1, col))
+                ball.TopBall = GetBallAt(row - 1, col);*/
         }
         
         
