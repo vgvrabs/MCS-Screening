@@ -62,15 +62,15 @@ public class PlayerController : MonoBehaviour {
     }
 
     public void GenerateInitialBall() {
-        print("generated Initial Ball");
-        int ballCount = ballManager.BallPool.Count;
+        int ballCount = ballManager.activeBalls.Count;
         
         NextBall = ballManager.BallPool[Random.Range(0, ballCount)];
         NextBallSprite.sprite = NextBall.GetComponent<SpriteRenderer>().sprite;
     }
     public void GenerateBall() {
-        int ballCount = ballManager.BallPool.Count;
-     
+        //ballManager.UpdateBallPool();
+        int ballCount = ballManager.activeBalls.Count;
+        
         if (ballCount <= 0) return;
 
         /*if (!NextBall) {

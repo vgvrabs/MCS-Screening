@@ -6,6 +6,7 @@ using System.Runtime;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using Update = Unity.VisualScripting.Update;
 
 public class BallManager : MonoBehaviour {
     
@@ -36,6 +37,7 @@ public class BallManager : MonoBehaviour {
 
     public void AddBall(Ball ball) {
         activeBalls.Add(ball);
+        UpdateBallPool();
     }
 
     public void RemoveBall(Ball ball) {
@@ -44,6 +46,7 @@ public class BallManager : MonoBehaviour {
             activeBalls.Remove(ball);
         }
         
+        UpdateBallPool();
         gameManager.CheckForWinCondition();
     }
 
@@ -60,37 +63,24 @@ public class BallManager : MonoBehaviour {
                 Destroy(connectedBalls[i].gameObject);
             }
             
+            //CheckDisconnectedBalls();
             StartCoroutine(WaitAndCheck());
         }
         
+        UpdateBallPool();
         gameManager.CheckForWinCondition();
     }
     
     
     public void UpdateBallPool() {
-        //BallPool.Clear();
+        BallPool.Clear();
 
-        //BallPool = (gameObject) activeBalls;
-        /*Ball.BallColor[] ballColors = new[] {
-            Ball.BallColor.Brown, Ball.BallColor.White,
-            Ball.BallColor.Gold, Ball.BallColor.Red, Ball.BallColor.Blue
-        };
-
-        for (int i = 0; i < 5; i++) {
-            foreach (Ball ball in activeBalls) {
-                if(ball.Color != ballColors[i]) continue;
-
-                if (ball) {
-                    BallPool.Add(ball.gameObject);
-                    break;
-                }
+        foreach (Ball ball in activeBalls) {
+            if (!ball) continue;
+            if (activeBalls.Contains(ball)) {
+                BallPool.Add(ball.gameObject);
             }
-        }*/
-        /*foreach (Ball ball in activeBalls) {
-            for (int i = 0; i < 4; i++) {
-                
-            }
-        }*/
+        }
     }
     
     public void CheckDisconnectedBalls() {
@@ -111,13 +101,8 @@ public class BallManager : MonoBehaviour {
             ball.GetBallBelow(ball, tempBalls);
         }
         
-        
         disconnectedBalls.AddRange(tempBalls);
         DisconnectedBalls = disconnectedBalls;
-        
-        
-        
-        //DestroyBalls(DisconnectedBalls, 0);
         
         foreach (Ball ball in DisconnectedBalls) {
             if (DisconnectedBalls.Contains(ball)) {
@@ -132,10 +117,9 @@ public class BallManager : MonoBehaviour {
             }
         }
         
-        
-        gameManager.CheckForWinCondition();
         UpdateBallPool();
-        //DisconnectedBalls.Clear();
+        gameManager.CheckForWinCondition();
+        DisconnectedBalls.Clear();
     }
     
     public IEnumerator WaitAndCheck() {

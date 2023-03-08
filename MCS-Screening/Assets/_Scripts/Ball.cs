@@ -123,7 +123,7 @@ public class Ball : MonoBehaviour {
     private void OnCollisionEnter(Collision other) {
         if (!other.gameObject.GetComponent<Ball>()) return;
         
-        if (!rigidbody.isKinematic) {
+        if (!rigidbody.isKinematic && !other.gameObject.GetComponent<Ball>().IsShot) {
             BallManager ballManager = SingletonManager.Get<BallManager>();
             IsShot = false;
             rigidbody.isKinematic = true;
@@ -134,21 +134,7 @@ public class Ball : MonoBehaviour {
             ballManager.DestroyBalls(ConnectedBalls, 3);
         }
     }
-
-    public void SetCollisionPosition(Vector3 position) {
-        collisionPosition = position;
-    }
-    public Vector3 GetCollisionPosition() {
-        return collisionPosition;
-    }
-
-    public bool IsConnectedTo() {
-        //float distance = Vector3.Distance(transform.position, otherBall.transform.position);
-        //return distance <= 1.3f;
-        if (TopBall != null) return true;
-
-        return false;
-    }
+    
 
     public void SetBallPosition(int x, int y) {
         Row = x;

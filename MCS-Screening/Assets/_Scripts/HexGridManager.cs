@@ -166,15 +166,6 @@ public class HexGridManager : MonoBehaviour {
         HexGrid[row, col] = ball.gameObject;
         if (col >= 1) {
             ball.TopBall = ballCol.gameObject.GetComponent<Ball>();
-            /*if (IsBallAt(row, col - 1))
-                ball.TopBall = GetBallAt(row, col - 1);
-            
-            else if (IsBallAt(row + 1, col - 1)) {
-                ball.TopBall = GetBallAt(row + 1, col - 1);
-            }
-            
-            else if (IsBallAt(row - 1, col))
-                ball.TopBall = GetBallAt(row - 1, col);*/
         }
         
         
