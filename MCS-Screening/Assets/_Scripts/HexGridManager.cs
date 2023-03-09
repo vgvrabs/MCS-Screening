@@ -15,7 +15,6 @@ public class HexGridManager : MonoBehaviour {
     public int YGridSize = 10;
     public float HexSize = 1f;
     public int BallSpawnChance;
-    public float gap = 0.1f;
     public List<Ball> ConnectedBalls;
     public GameObject[,] HexGrid;
 
@@ -158,8 +157,8 @@ public class HexGridManager : MonoBehaviour {
         ballManager.AddBall(ball); ;
 
         //look for the nearest coordinate on the grid 
-        int row = Mathf.RoundToInt(collisionPos.x / xOffset);
-        int col = Mathf.Abs(Mathf.RoundToInt(collisionPos.y / yOffset));
+        int row = Mathf.RoundToInt(collisionPos.x / (xOffset - 0.1f));
+        int col = Mathf.Abs(Mathf.RoundToInt(collisionPos.y / (yOffset - 0.1f)));
         
         ball.SetBallPosition(row ,col);
 
@@ -169,8 +168,10 @@ public class HexGridManager : MonoBehaviour {
             ball.TopBall = ballCol.gameObject.GetComponent<Ball>();
         }
         
-        
-        //ballManager.UpdateBallPool();
+        ball.transform.rotation = Quaternion.identity;
+
+
+        //objectballManager.UpdateBallPool();
         gameManager.CheckForLoseCondition(ball);
     }
 }
