@@ -163,12 +163,14 @@ public class HexGridManager : MonoBehaviour {
         
         ball.SetBallPosition(row ,col);
 
-        HexGrid[row, col] = ball.gameObject;
+        if(!IsBallAt(row, col)) HexGrid[row, col] = ball.gameObject;
+        
         if (col >= 1) {
             ball.TopBall = ballCol.gameObject.GetComponent<Ball>();
         }
         
         
+        //ballManager.UpdateBallPool();
         gameManager.CheckForLoseCondition(ball);
     }
 }

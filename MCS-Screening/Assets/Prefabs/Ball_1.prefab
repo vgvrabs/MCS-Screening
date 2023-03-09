@@ -112,7 +112,7 @@ MonoBehaviour:
   IsShot: 0
   IsDropping: 0
   Speed: 20
-  Radius: 1
+  Radius: 0.9
   ConnectedBalls: []
   ConnectedBallsBelow: []
   TopBall: {fileID: 0}

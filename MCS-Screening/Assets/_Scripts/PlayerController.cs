@@ -17,11 +17,13 @@ public class PlayerController : MonoBehaviour {
     public GameObject CurrentBall;
     public SpriteRenderer NextBallSprite;
     public GameObject NextBall;
+    public int AttackInterval = 1;
+    public bool CanShoot;
 
     private HexGridManager hexGridManager;
     private BallManager ballManager;
     
-    [SerializeField] private bool canShoot;
+   
 
     IEnumerator Start() {
         yield return new WaitForSeconds(1f);
@@ -32,7 +34,7 @@ public class PlayerController : MonoBehaviour {
     void Update() {
         LookAtMouse();
         
-        if (Input.GetMouseButtonDown(0) && canShoot) {
+        if (Input.GetMouseButtonDown(0) && CanShoot) {
             ShootBall(CurrentBall);
             GenerateBall();
         }
@@ -43,7 +45,7 @@ public class PlayerController : MonoBehaviour {
         ballManager = SingletonManager.Get<BallManager>();
         GenerateInitialBall();
         GenerateBall();
-        canShoot = true;
+        CanShoot = true;
     }
 
     private void LookAtMouse() {
@@ -62,44 +64,45 @@ public class PlayerController : MonoBehaviour {
     }
 
     public void GenerateInitialBall() {
-        int ballCount = ballManager.activeBalls.Count;
+        int ballCount = ballManager.BallPool.Count;
         
-        NextBall = ballManager.BallPool[Random.Range(0, ballCount)];
+        NextBall = ballManager.activeBalls[Random.Range(0, ballCount)].gameObject;
         NextBallSprite.sprite = NextBall.GetComponent<SpriteRenderer>().sprite;
     }
     public void GenerateBall() {
         //ballManager.UpdateBallPool();
-        int ballCount = ballManager.activeBalls.Count;
-        
-        if (ballCount <= 0) return;
+        ballManager.CheckAvailableColors();
+        int ballCount = ballManager.BallPool.Count;
 
-        /*if (!NextBall) {
-            return;
-        }*/
+        if (ballCount <= 0) return;
         
         CurrentBall = NextBall;
         CurrentBallSprite.sprite = CurrentBall.GetComponent<SpriteRenderer>().sprite;
-        NextBall = ballManager.BallPool[Random.Range(0, ballCount)];
+        
+        NextBall = ballManager.BallPool[Random.Range(0, ballCount)].gameObject;
         NextBallSprite.sprite = NextBall.GetComponent<SpriteRenderer>().sprite;
     }
 
     public void ShootBall(GameObject ball) {
-        if (!ball) return;
+        if (!ball) {
+            return;
+        }
 
         GameObject spawnedBall = Instantiate(ball, FirePoint.transform.position, FirePoint.transform.rotation);
         ShotBall = spawnedBall.GetComponent<Ball>();
         ShotBall.Initialize();
-        WaitToShoot(1f);
+        WaitToShoot(AttackInterval);
     }
 
     public async void WaitToShoot(float duration) {
-        canShoot = false;
+        CanShoot = false;
         float endTime = Time.time + duration;
         while (Time.time < endTime) {
             await Task.Yield();
         }
 
-        canShoot = true;
+        //ballManager.UpdateBallPool();
+        CanShoot = true;
     }
 
 }

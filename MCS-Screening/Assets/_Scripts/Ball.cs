@@ -1,9 +1,5 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -21,6 +17,7 @@ public class Ball : MonoBehaviour {
     public BallColor Color;
     public UnityEvent<Ball, Collision> Evt_OnHit = new();
     public UnityEvent<Ball> Evt_OnDestroy = new();
+    public UnityEvent<List<Ball>> Evt_OnMatch = new();
     public bool IsShot = false;
     public bool IsDropping = false;
     public float Speed = 10;
@@ -43,6 +40,7 @@ public class Ball : MonoBehaviour {
         
         Evt_OnHit.AddListener(SingletonManager.Get<HexGridManager>().SnapToGrid);
         Evt_OnDestroy.AddListener(SingletonManager.Get<BallManager>().RemoveBall);
+        Evt_OnMatch.AddListener(SingletonManager.Get<BallManager>().DestroyBalls);
 
         rigidbody.isKinematic = false;
         IsShot = true;
@@ -121,9 +119,13 @@ public class Ball : MonoBehaviour {
     }
     
     private void OnCollisionEnter(Collision other) {
-        if (!other.gameObject.GetComponent<Ball>()) return;
+        Ball ball = other.gameObject.GetComponent<Ball>();
         
-        if (!rigidbody.isKinematic && !other.gameObject.GetComponent<Ball>().IsShot) {
+        if (!ball) return;
+
+        if (ball.IsShot) return;
+        
+        if (!rigidbody.isKinematic) {
             BallManager ballManager = SingletonManager.Get<BallManager>();
             IsShot = false;
             rigidbody.isKinematic = true;
@@ -131,10 +133,16 @@ public class Ball : MonoBehaviour {
             Evt_OnHit?.Invoke(this, other);
             ConnectedBalls.Add(this);
             GetNeighbor(this);
-            ballManager.DestroyBalls(ConnectedBalls, 3);
+            Evt_OnMatch?.Invoke(ConnectedBalls);
         }
     }
-    
+
+    private void OnDestroy() {
+        Evt_OnDestroy.RemoveAllListeners();
+        Evt_OnHit.RemoveAllListeners();
+        Evt_OnMatch.RemoveAllListeners();
+    }
+
 
     public void SetBallPosition(int x, int y) {
         Row = x;

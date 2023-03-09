@@ -9,11 +9,14 @@ using UnityEngine.PlayerLoop;
 using Update = Unity.VisualScripting.Update;
 
 public class BallManager : MonoBehaviour {
-    
+
+    public int ScorePerBall;
     public List<GameObject> BallPrefab;
     public List<GameObject> BallPool;
     public List<Ball> activeBalls;
     public List<Ball> DisconnectedBalls = new List<Ball>();
+
+    public int MinimumMatch;
 
     private GameManager gameManager;
     private HexGridManager hexGridManager;
@@ -37,7 +40,6 @@ public class BallManager : MonoBehaviour {
 
     public void AddBall(Ball ball) {
         activeBalls.Add(ball);
-        UpdateBallPool();
     }
 
     public void RemoveBall(Ball ball) {
@@ -46,16 +48,19 @@ public class BallManager : MonoBehaviour {
             activeBalls.Remove(ball);
         }
         
-        UpdateBallPool();
         gameManager.CheckForWinCondition();
     }
 
-    public void DestroyBalls(List<Ball> connectedBalls, int threshold) {
+    public void DestroyBalls(List<Ball> connectedBalls) {
 
-        if (connectedBalls.Count >= 3) {
+        if (connectedBalls.Count >= MinimumMatch) {
             for (int i = connectedBalls.Count - 1; i >= 0; i--) {
                 activeBalls.Remove(connectedBalls[i]);
-                hexGridManager.HexGrid[connectedBalls[i].Row, connectedBalls[i].Col] = null;
+
+                if (!hexGridManager.IsBallAt(connectedBalls[i].Row, connectedBalls[i].Col)) {
+                    hexGridManager.HexGrid[connectedBalls[i].Row, connectedBalls[i].Col] = null;
+                }
+                
                 if (DisconnectedBalls.Contains(connectedBalls[i])) {
                     DisconnectedBalls.Remove(connectedBalls[i]);
                 }
@@ -65,20 +70,33 @@ public class BallManager : MonoBehaviour {
             
             //CheckDisconnectedBalls();
             StartCoroutine(WaitAndCheck());
+            
+            gameManager.AddScore(ScorePerBall, connectedBalls.Count);
         }
         
-        UpdateBallPool();
+        //gameManager.AddScore(ScorePerBall, connectedBalls.Count);
         gameManager.CheckForWinCondition();
     }
     
-    
-    public void UpdateBallPool() {
+    public void CheckAvailableColors() {
         BallPool.Clear();
+        List<Ball.BallColor> ballColors = new List<Ball.BallColor>();
 
-        foreach (Ball ball in activeBalls) {
-            if (!ball) continue;
-            if (activeBalls.Contains(ball)) {
-                BallPool.Add(ball.gameObject);
+        Ball.BallColor[] colorList = {
+            Ball.BallColor.Brown, Ball.BallColor.White, 
+            Ball.BallColor.Gold, Ball.BallColor.Red, Ball.BallColor.Blue
+        };
+
+        
+        foreach (Ball b in activeBalls) {
+            ballColors.Add(b.Color);
+        }
+
+
+        for (int i = 0; i < colorList.Length; i++) {
+            if (ballColors.Contains(BallPrefab[i].GetComponent<Ball>().Color))
+            {
+                BallPool.Add(BallPrefab[i]);
             }
         }
     }
@@ -117,14 +135,14 @@ public class BallManager : MonoBehaviour {
             }
         }
         
-        UpdateBallPool();
-        gameManager.CheckForWinCondition();
+        // gameManager.CheckForWinCondition();
         DisconnectedBalls.Clear();
     }
     
     public IEnumerator WaitAndCheck() {
-        yield return new WaitForSeconds(0.5f);
-        
+        //yield return new WaitForSeconds(0.1f);
+        yield return new WaitForEndOfFrame();
+
         CheckDisconnectedBalls();
     }
     

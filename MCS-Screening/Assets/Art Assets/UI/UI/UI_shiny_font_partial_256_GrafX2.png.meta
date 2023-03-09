@@ -3,10 +3,10 @@ guid: 49f9a3b61ab97ed468f36b2091a69d81
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -36,13 +36,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,9 +51,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -63,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -103,18 +102,1470 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a7d26aeb863ba84ba68252d24bb2c3c
+      internalID: -325875767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0f63c4868f0cd342a2e584b988497fe
+      internalID: 2005204686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32d50220587ec924790d10418310b30f
+      internalID: -1019844015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_3
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d925477574b20cb4da45ed49a1c7db15
+      internalID: 1154278805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0bd0e86c5de61449bb45d23bebe5dbf
+      internalID: -788321714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_5
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2c6f4fdec35eae4a9f1383b77bcdf82
+      internalID: -217992068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_6
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b6243c36ce8c0c46998a5810e110c4e
+      internalID: 1028704211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_7
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbb3e86f1f42cfb4ebe996ba3839ca90
+      internalID: -672043208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_8
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 25
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee6162168c8aad44f82fc7d1e75ecdde
+      internalID: 574128587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_9
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 25
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebafe98844db2c644bd11a3d7d7cbd4c
+      internalID: 1697152673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_10
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4eef3b37750ee347923fcf9b5851d97
+      internalID: -214470184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_11
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 616f2434b1955af4ea639736b506b881
+      internalID: -422404488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_12
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aafaaa3c1d74c84a8cca76df3a7bc7f
+      internalID: 1021329279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_13
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28e4c5aa5381e464294a8b2bda7dad6e
+      internalID: 2055511056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_14
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7669d75ef4f49e4eb0871855a048398
+      internalID: -161521934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_15
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34d1b03e651e10a448af2ab511d761b6
+      internalID: -1103962572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_16
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3585432a2fea198458f460ee53c69850
+      internalID: -486410623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_17
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2f41efd8b04dd94398d0024f445dc7e
+      internalID: -114099404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_18
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f147c6e16cc3e6459876a50e05d41a7
+      internalID: 409268707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_19
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 25
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aedad7586c851440a945e632f780735
+      internalID: -441582694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_20
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d93619646a59534293b894ddbcddf8e
+      internalID: 776765891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_21
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56c580acf71dcdc4a8f27ea5f54b7972
+      internalID: -1093602813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_22
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7974b171c3ea05f40b4f36e1e02ab706
+      internalID: -511298095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_23
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bff64b5f9a62eae4e888fe202ebe269e
+      internalID: 385441074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_24
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a244b6f129735647ab1adea23645ed5
+      internalID: -625910554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_25
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 722dd4d1ed0695341afbe1e31375b1a3
+      internalID: 1193900657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_26
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 17
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79498023504cb0847bfafdcd2253ef5a
+      internalID: -249110577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_27
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 17
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 888c91d0c0dbe7a46bc27d7d4ab363c7
+      internalID: -687767778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_28
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 17
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c472e1ae91e1c014492bbf55ffa99dfe
+      internalID: -383087762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_29
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 17
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bd7f13fdf35fb9429325b14bcce8274
+      internalID: -991401926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_30
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 17
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab7bc71fd4d98bd44b43d3cc95e79045
+      internalID: 266241922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_31
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 11
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ff0fdf68f1069c4da6e1953f3bba664
+      internalID: 985505737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_32
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38662ed87a33c07499b782101a6b9a6a
+      internalID: -92681372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_33
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 17
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8b0e7240c5560d4b9211ed963854108
+      internalID: 2143935680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_34
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 11
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23a9c4892861d09408309f809be59821
+      internalID: 61661041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_35
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 11
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc60234a6aa02384289a731b24a9845c
+      internalID: 2074309829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_36
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 17
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25f4f9fde41512641a4c17b2678615ec
+      internalID: -651436345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_37
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 16
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcbbccae61dbcc74b993972ccfe89498
+      internalID: -1903998598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_38
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 17
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bfaa6f2320123a43802276cb4a6c9b9
+      internalID: -687382955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_39
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 17
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6277e0339356e274080a1bbddc47d094
+      internalID: -2077613662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_40
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 17
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f52fd12300bb2764296919efa2053e2a
+      internalID: 1208959307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_41
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 16
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64cc6f9a70908c247953aa27590af687
+      internalID: 1654899439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_42
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 16
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a00f320d0e880f45862c54d99899740
+      internalID: 1955810432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_43
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 17
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd4640b505def23429b438f8248a1ef1
+      internalID: 1076601604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_44
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 17
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20e4a4060bdb1a6449071dc451cc01f7
+      internalID: 1901702827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_45
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 17
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 806f8455249fd134985462940d2ca54f
+      internalID: -1589051137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_46
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 17
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2abfb5e80c76c541aece3fae3ea228c
+      internalID: -1141519032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_47
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 17
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dec5e5df302e71647b022b81850e9363
+      internalID: 1653889001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_48
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 17
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f171020ecf6e48b4fb68636f24f13d14
+      internalID: 932236078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_49
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 17
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61395533b1224b24997de1120f4682a7
+      internalID: 47464840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_50
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 16
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c743cbdcc8d9f04fa6775383522f4a6
+      internalID: -987759407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_51
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 17
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 121ac93ab62707b498dbcaf2548bc327
+      internalID: 1808023966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_52
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 9
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06d72697f1a2b8d4fa73aa57bb833126
+      internalID: -1415509353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_53
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 9
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78ebcc3bc2b04294aa93daf4c71a3e9d
+      internalID: -396858031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_54
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1
+        width: 6
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6c07ad9d0968164d9d85670d4a57710
+      internalID: -934279806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_55
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 1
+        width: 6
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0abc32aec2132f4db3df85c0eaeb61a
+      internalID: 783081006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_56
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 9
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5750712f28bbc1c4986dfc430868a6f7
+      internalID: -531637690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_57
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 1
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deb031e0f3e87254783fe48515440a09
+      internalID: 1765885876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_58
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 9
+        width: 14
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3e63145476117c469e0418922e997e5
+      internalID: 1365046577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_59
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 1
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e823c48684ce11f4a85cc1fff3f2caa5
+      internalID: 1167737539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_60
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5a01077985a23347891a3e91ea3f933
+      internalID: 649177194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_61
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdb96e29846ebb2479eade150c8ad619
+      internalID: -2044652825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_62
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 1
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e314e6d438286b41a634276d28d5591
+      internalID: 92417629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_63
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbdd5fe42472c2c42bba37d2a029a9e2
+      internalID: 1943159619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_64
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 1
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27a9212f37297ad439e9d82169ea12ea
+      internalID: -103167896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_shiny_font_partial_256_GrafX2_65
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 1
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46eaeb417c760da46af3ea9a23c08e76
+      internalID: -46563601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 3c2c8e7d21f28c449abd07b1b2361a94
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UI_shiny_font_partial_256_GrafX2_10: -214470184
+      UI_shiny_font_partial_256_GrafX2_58: 1365046577
+      UI_shiny_font_partial_256_GrafX2_38: -687382955
+      UI_shiny_font_partial_256_GrafX2_48: 932236078
+      UI_shiny_font_partial_256_GrafX2_27: -687767778
+      UI_shiny_font_partial_256_GrafX2_46: -1141519032
+      UI_shiny_font_partial_256_GrafX2_23: 385441074
+      UI_shiny_font_partial_256_GrafX2_37: -1903998598
+      UI_shiny_font_partial_256_GrafX2_4: -788321714
+      UI_shiny_font_partial_256_GrafX2_63: 1943159619
+      UI_shiny_font_partial_256_GrafX2_18: 409268707
+      UI_shiny_font_partial_256_GrafX2_36: -651436345
+      UI_shiny_font_partial_256_GrafX2_32: -92681372
+      UI_shiny_font_partial_256_GrafX2_39: -2077613662
+      UI_shiny_font_partial_256_GrafX2_47: 1653889001
+      UI_shiny_font_partial_256_GrafX2_14: -161521934
+      UI_shiny_font_partial_256_GrafX2_42: 1955810432
+      UI_shiny_font_partial_256_GrafX2_62: 92417629
+      UI_shiny_font_partial_256_GrafX2_53: -396858031
+      UI_shiny_font_partial_256_GrafX2_40: 1208959307
+      UI_shiny_font_partial_256_GrafX2_21: -1093602813
+      UI_shiny_font_partial_256_GrafX2_50: -987759407
+      UI_shiny_font_partial_256_GrafX2_33: 2143935680
+      UI_shiny_font_partial_256_GrafX2_7: -672043208
+      UI_shiny_font_partial_256_GrafX2_24: -625910554
+      UI_shiny_font_partial_256_GrafX2_1: 2005204686
+      UI_shiny_font_partial_256_GrafX2_31: 985505737
+      UI_shiny_font_partial_256_GrafX2_12: 1021329279
+      UI_shiny_font_partial_256_GrafX2_25: 1193900657
+      UI_shiny_font_partial_256_GrafX2_65: -46563601
+      UI_shiny_font_partial_256_GrafX2_57: 1765885876
+      UI_shiny_font_partial_256_GrafX2_56: -531637690
+      UI_shiny_font_partial_256_GrafX2_64: -103167896
+      UI_shiny_font_partial_256_GrafX2_55: 783081006
+      UI_shiny_font_partial_256_GrafX2_45: -1589051137
+      UI_shiny_font_partial_256_GrafX2_34: 61661041
+      UI_shiny_font_partial_256_GrafX2_16: -486410623
+      UI_shiny_font_partial_256_GrafX2_30: 266241922
+      UI_shiny_font_partial_256_GrafX2_22: -511298095
+      UI_shiny_font_partial_256_GrafX2_41: 1654899439
+      UI_shiny_font_partial_256_GrafX2_20: 776765891
+      UI_shiny_font_partial_256_GrafX2_6: 1028704211
+      UI_shiny_font_partial_256_GrafX2_44: 1901702827
+      UI_shiny_font_partial_256_GrafX2_49: 47464840
+      UI_shiny_font_partial_256_GrafX2_3: 1154278805
+      UI_shiny_font_partial_256_GrafX2_11: -422404488
+      UI_shiny_font_partial_256_GrafX2_15: -1103962572
+      UI_shiny_font_partial_256_GrafX2_52: -1415509353
+      UI_shiny_font_partial_256_GrafX2_0: -325875767
+      UI_shiny_font_partial_256_GrafX2_8: 574128587
+      UI_shiny_font_partial_256_GrafX2_5: -217992068
+      UI_shiny_font_partial_256_GrafX2_28: -383087762
+      UI_shiny_font_partial_256_GrafX2_26: -249110577
+      UI_shiny_font_partial_256_GrafX2_2: -1019844015
+      UI_shiny_font_partial_256_GrafX2_9: 1697152673
+      UI_shiny_font_partial_256_GrafX2_17: -114099404
+      UI_shiny_font_partial_256_GrafX2_29: -991401926
+      UI_shiny_font_partial_256_GrafX2_35: 2074309829
+      UI_shiny_font_partial_256_GrafX2_19: -441582694
+      UI_shiny_font_partial_256_GrafX2_13: 2055511056
+      UI_shiny_font_partial_256_GrafX2_54: -934279806
+      UI_shiny_font_partial_256_GrafX2_43: 1076601604
+      UI_shiny_font_partial_256_GrafX2_61: -2044652825
+      UI_shiny_font_partial_256_GrafX2_51: 1808023966
+      UI_shiny_font_partial_256_GrafX2_59: 1167737539
+      UI_shiny_font_partial_256_GrafX2_60: 649177194
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
